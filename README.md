@@ -49,6 +49,39 @@ make
 
 ./ShaderLabFramework
 
+### macOS guide
+
+#### Dependencies
+
+```
+brew install qt5
+brew link --force qt5
+brew install glew
+```
+
+#### Installation
+
+```
+export HOMEBREW_QT5_VERSION=$(brew list --versions qt5 | rev | cut -d' ' -f1 | rev)
+ln -s /usr/local/Cellar/qt5/$HOMEBREW_QT5_VERSION/mkspecs /usr/local/mkspecs
+ln -s /usr/local/Cellar/qt5/$HOMEBREW_QT5_VERSION/plugins /usr/local/plugins
+
+git clone https://github.com/bkainz/ShaderLabFramework.git
+
+cd ShaderLabFramework
+
+mkdir build
+
+cd build
+
+cmake ..
+
+make
+
+./ShaderLabFramework
+```
+
+
 ## Features:
 - render window
 - mouse-based interaction
